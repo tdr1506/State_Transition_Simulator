@@ -3,8 +3,6 @@
 ### Description
 The `StateSimulator` class simulates state transitions and holding times of a system. It allows you to initialize the simulator with a set of states, transition probabilities, and holding times. You can then perform various operations such as getting the current state, transitioning to the next state, setting a new state, and simulating state percentages over a given number of hours.
 
-### Class: StateSimulator
-
 #### Methods:
 
 1. `__init__(self, states, transition_probabilities, holding_times)`
