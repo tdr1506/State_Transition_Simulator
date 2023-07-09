@@ -51,7 +51,7 @@ class StateSimulator:
         return state_percentages
 ```
 
-### Methods:
+### Methods Used:
 
 1. `__init__(self, states, transition_probabilities, holding_times)`
    - Initializes the StateSimulator object with the provided states, transition probabilities, and holding times.
