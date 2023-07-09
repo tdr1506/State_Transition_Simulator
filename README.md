@@ -132,4 +132,6 @@ State percentages after simulating 10000 hours:
 [0.4309, 0.2947, 0.1784, 0.096]
 ```
 
-The code sets up a `StateSimulator` with transition probabilities and holding times for different weather states: sunny, cloudy, rainy, and snowy. It then simulates the state transitions for 10000 hours and calculates the percentages of time spent in each state during the simulation. The outcome shows the state percentages as a list, where each value represents the proportion of time spent in the corresponding state. In this example, the state percentages are approximately 43.09% for sunny, 29.47% for cloudy, 17.84% for rainy, and 9.6% for snowy.
+The code sets up a `StateSimulator` with transition probabilities and holding times for different weather states: sunny, cloudy, rainy, and snowy. It then simulates the state transitions for 10000 hours and calculates the percentages of time spent in each state during the simulation.
+
+The outcome shows the state percentages as a list, where each value represents the proportion of time spent in the corresponding state. In this example, the state percentages are approximately 43.09% for sunny, 29.47% for cloudy, 17.84% for rainy, and 9.6% for snowy.
