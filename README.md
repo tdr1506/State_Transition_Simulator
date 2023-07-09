@@ -80,7 +80,7 @@ print("State percentages after simulating {} hours:".format(hours))
 print(state_percentages)
 ```
 
-### Outcome:
+## Outcome
 ```
 State percentages after simulating 10000 hours:
 [0.4309, 0.2947, 0.1784, 0.096]
