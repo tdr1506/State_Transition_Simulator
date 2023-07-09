@@ -1,9 +1,57 @@
 ## Assignment2.py
 
-### Description
+### Description:
 The `StateSimulator` class simulates state transitions and holding times of a system. It allows you to initialize the simulator with a set of states, transition probabilities, and holding times. You can then perform various operations such as getting the current state, transitioning to the next state, setting a new state, and simulating state percentages over a given number of hours.
 
-#### Methods:
+### Code:
+
+```python
+import numpy as np
+
+class StateSimulator:
+    def __init__(self, states, transition_probabilities, holding_times):
+        self.states = states
+        self.transition_probabilities = transition_probabilities
+        self.holding_times = holding_times
+        self.current_state = np.random.choice(list(states))  # Initialize current state
+        self.remaining_hours = holding_times[self.current_state]
+
+    def get_states(self):
+        return self.states
+
+    def get_current_state(self):
+        return self.current_state
+
+    def next_state(self):
+        probabilities = list(self.transition_probabilities[self.current_state].values())
+        next_state = np.random.choice(self.states, p=probabilities)
+        self.current_state = next_state
+        self.remaining_hours = self.holding_times[next_state]
+
+    def set_state(self, new_state):
+        if new_state not in self.states:
+            raise ValueError("Invalid state '{}'.".format(new_state))
+        self.current_state = new_state
+        self.remaining_hours = self.holding_times[new_state]
+
+    def current_state_remaining_hours(self):
+        return self.remaining_hours
+
+    def iterable(self):
+        while True:
+            yield self.current_state
+            self.next_state()
+
+    def simulate(self, hours):
+        state_counts = {state: 0 for state in self.states}
+        for _ in range(hours):
+            self.next_state()
+            state_counts[self.current_state] += 1
+        state_percentages = [state_counts[state] / hours for state in self.states]
+        return state_percentages
+```
+
+### Methods:
 
 1. `__init__(self, states, transition_probabilities, holding_times)`
    - Initializes the StateSimulator object with the provided states, transition probabilities, and holding times.
@@ -49,7 +97,7 @@ The `StateSimulator` class simulates state transitions and holding times of a sy
      - `hours` (int): The number of hours to simulate.
    - Returns:
      - `list`: A list of state percentages representing the proportion of time spent in each state during the simulation.
-
+    
 ## Test.py
 
 ### Description:
@@ -78,7 +126,7 @@ print("State percentages after simulating {} hours:".format(hours))
 print(state_percentages)
 ```
 
-## Outcome
+### Outcome:
 ```
 State percentages after simulating 10000 hours:
 [0.4309, 0.2947, 0.1784, 0.096]
