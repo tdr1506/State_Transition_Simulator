@@ -55,7 +55,7 @@ The `StateSimulator` class simulates state transitions and holding times of a sy
 ## Test.py
 
 ### Description:
-This code file demonstrates the usage of the `StateSimulator` class from `Assignment2.py` and sets up transition probabilities and holding times for different states, simulates state percentages over a specified number of hours, and prints the results.
+This code file demonstrates the usage of the `StateSimulator` class from `Assignment2.py` and sets up transition probabilities and holding times for different states, simulates state percentages over a specified number of hours, and prints out the results.
 
 ### Code:
 
